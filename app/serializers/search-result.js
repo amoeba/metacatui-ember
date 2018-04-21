@@ -1,0 +1,20 @@
+import DS from 'ember-data';
+
+export default DS.JSONSerializer.extend({
+  normalizeResponse(store, primaryModelClass, payload, id, requestType, returns) {
+    // Add 'type' key to each doc
+    // TODO: Find a cleaner way to inject this?
+    let docs = payload.response.docs.map(function(d) {
+      return {
+        'id' : d.id,
+        'type' : 'search-result',
+        'attributes' : d
+      }
+    })
+
+    return {
+      data: docs,
+      meta: payload.responseHeader
+    }
+  }
+});

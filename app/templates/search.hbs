@@ -1,0 +1,9 @@
+<h2>Search</h2>
+
+<form action="/search" method="GET">
+  <p>Enter values for the Solr <code>q</code> query parameter to change query:</p>
+  {{input type="text" name="q" value=query}}
+  <button>Go</button>
+</form>
+
+{{search-results results=model}}
