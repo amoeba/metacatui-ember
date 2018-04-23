@@ -9,6 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('search');
   this.route('view', { path: '/view/:id' });
+  this.route('package', { path: '/package/:id' });
 });
 
 export default Router;

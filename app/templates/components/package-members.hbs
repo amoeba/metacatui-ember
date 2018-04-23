@@ -1,0 +1,29 @@
+<h3>Package Members</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>PID</th>
+      <th>fileName</th>
+      <th>formatId</th>
+      <th>size</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each members as |m|}}
+      <tr>
+        <td>{{m.id}}</td>
+        <td>{{m.fileName}}</td>
+        <td>{{m.formatId}}</td>
+        <td>{{m.size}}</td>
+        <td>
+          {{#if m.isMetadata}}
+            <a href="/view/{{m.id}}">View</a>
+          {{else}}
+            Noview
+          {{/if}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

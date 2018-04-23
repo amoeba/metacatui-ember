@@ -5,9 +5,8 @@ import $ from 'jquery';
 export default DS.Adapter.extend({
   findRecord(store, type, id) {
     return new RSVP.Promise(function(resolve, reject) {
-      $.get(`https://search-stage.test.dataone.org/cn/v2/views/metacatui/${id}`).then(function(data) {
-        let html = $.parseHTML(data);
-        resolve(html);
+      $.getJSON(`https://cn-stage.test.dataone.org/cn/v2/query/solr/?wt=json&fl=id,fileName,formatId,formatType,size&rows=1000&q=resourceMap:"${id}"`).then(function(data) {
+        resolve(data);
       }, function(jqXHR) {
         reject(jqXHR);
       });

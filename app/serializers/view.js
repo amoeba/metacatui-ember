@@ -9,7 +9,7 @@ export default DS.Serializer.extend({
         'attributes' : {
           'html' : payload[5]
         }
-      },
+      }
     }
   }
 });
