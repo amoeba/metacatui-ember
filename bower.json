@@ -1,6 +1,0 @@
-{
-  "name": "metacatui-ember",
-  "dependencies": {
-    "json-bignum": "^0.0.1"
-  }
-}
