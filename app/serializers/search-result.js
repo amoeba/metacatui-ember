@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.JSONSerializer.extend({
-  normalizeResponse(store, primaryModelClass, payload, id, requestType) {
+  normalizeResponse(store, primaryModelClass, payload) {
     // Collapse all multi-valued resourceMap fields into a single value
     let x = payload.response.docs.map(function(d) {
       d['resourceMap'] = d['resourceMap'][0]
