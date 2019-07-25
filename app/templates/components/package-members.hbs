@@ -18,9 +18,7 @@
         <td>{{m.size}}</td>
         <td>
           {{#if m.isMetadata}}
-            <a href="/view/{{m.id}}">View</a>
-          {{else}}
-            Noview
+            {{#link-to "view" m.id}}View{{/link-to}}            
           {{/if}}
         </td>
       </tr>
